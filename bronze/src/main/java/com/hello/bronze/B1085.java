@@ -10,7 +10,6 @@ public class B1085 {
         y = sc.nextInt();
         w = sc.nextInt();
         h = sc.nextInt();
-
         int minX = (w - x) > x ? x : w - x;
         int minY = (h - y) > y ? y : h - y;
         int total = (minY > minX) ? minX : minY;
