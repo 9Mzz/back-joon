@@ -16,15 +16,20 @@ public class B2605 {
         // n 명의 학생 받기
         int n = Integer.parseInt(br.readLine());
 
+        // 순서를 저장할 배열 생성
         ArrayList<Integer> arrays = new ArrayList<>();
-        StringTokenizer    st     = new StringTokenizer(br.readLine());
+        // 0 1 1 3 2 ... 값을 받을 token 5
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             int value = Integer.parseInt(st.nextToken());
-            // 순서 , 학생
+            // 줄 순서, 학생
             arrays.add(i - value, i + 1);
-            System.out.println(arrays.toString());
         }
+
+        // 값 출력
+        for (int i = 0; i < n; i++)
+            System.out.print(arrays.get(i) + " ");
         br.close();
     }
 }

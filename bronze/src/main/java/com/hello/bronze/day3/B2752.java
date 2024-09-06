@@ -21,9 +21,9 @@ public class B2752 {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int[] arrays = new int[3];
-        for(int i = 0; i < arrays.length; i++) {
+        for (int i = 0; i < arrays.length; i++)
             arrays[i] = Integer.parseInt(st.nextToken());
-        }
+
         Arrays.sort(arrays);
         System.out.println(arrays[0] + " " + arrays[1] + " " + arrays[2]);
     }
