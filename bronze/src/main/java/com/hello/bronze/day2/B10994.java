@@ -34,7 +34,6 @@ public class B10994 {
             }
             System.out.println();
         }
-
     }
 
     private static void drawStar(int a, int func) {

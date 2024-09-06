@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 public class B9184 {
 
-    // 2일차 - 4
-    // 메모리제이션
-    // 참고
-    // https://wondytyahng.tistory.com/entry/memoization-%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98
-    // https://gaybee.tistory.com/45
-
     static int[][][] arrays = new int[21][21][21];
 
     public static void main(String[] args) {
+        // 2일차 - 4
+        // 메모리제이션
+        // 참고
+        // https://wondytyahng.tistory.com/entry/memoization-%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98
+        // https://gaybee.tistory.com/45
         Scanner sc = new Scanner(System.in);
         int     a  = 0;
         int     b  = 0;
@@ -44,7 +43,6 @@ public class B9184 {
         if(arrays[a][b][c] != 0) {
             return arrays[a][b][c];
         }
-
 
         // Logic
         if(a < b && b < c) {
