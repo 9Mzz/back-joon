@@ -1,4 +1,4 @@
-package com.hello.bronze.day1;
+package com.hello.bronze.week1.day1;
 
 import java.util.Scanner;
 
