@@ -13,9 +13,9 @@ public class B9184 {
         // https://wondytyahng.tistory.com/entry/memoization-%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98
         // https://gaybee.tistory.com/45
         Scanner sc = new Scanner(System.in);
-        int     a  = 0;
-        int     b  = 0;
-        int     c  = 0;
+        int     a;
+        int     b;
+        int     c;
         while(true) {
             a = sc.nextInt();
             b = sc.nextInt();
