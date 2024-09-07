@@ -11,7 +11,7 @@ public class B11945 {
         int x = sc.nextInt();
 
         for(int i = 0; i < y; i++) {
-            StringBuilder sb      = new StringBuilder(sc.next());
+            StringBuilder sb = new StringBuilder(sc.next());
             System.out.println(sb.reverse());
         }
 
