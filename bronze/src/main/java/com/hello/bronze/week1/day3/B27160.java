@@ -18,7 +18,7 @@ public class B27160 {
                 .reverse()
                 .toString());
 
-        System.out.print(A > B ? A : B);
+        System.out.print(Math.max(A, B));
         sc.close();
     }
 }
