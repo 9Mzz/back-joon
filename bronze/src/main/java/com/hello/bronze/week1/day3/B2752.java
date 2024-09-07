@@ -1,4 +1,4 @@
-package com.hello.bronze.day3;
+package com.hello.bronze.week1.day3;
 
 
 import java.io.BufferedReader;
