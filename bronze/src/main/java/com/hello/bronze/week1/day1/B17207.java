@@ -1,14 +1,14 @@
 package com.hello.bronze.week1.day1;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class B17207 {
     public static void main(String[] args) throws IOException {
         // 1일차 - 6
         // https://www.acmicpc.net/problem/17207
-
 
         // 예상 일량
         // 40 50 20 70 10 Inseo
@@ -26,37 +26,56 @@ public class B17207 {
 
         // x번 사람의 y번째 일의 예상 일량 - ((x번 사람이 예상한 i번째 일의 난이도) * (i번째 사람이 예상한 y번째 일의 처리시간))
         // x 1 / i 1 ~ 5 / y 1 ~ 5
-        Integer[][]    workArrayA = new Integer[5][5];
-        Integer[][]    workArrayB = new Integer[5][5];
-        BufferedReader br         = new BufferedReader(new InputStreamReader(System.in));
 
+        // 입력 받을 Scanner
+        Scanner sc = new Scanner(System.in);
 
-        for(int i = 0; i < 5; i++) {
-            String   str   = br.readLine();
-            String[] split = str.split(" ");
-            for(int j = 0; j < 5; j++) {
-                int s = Integer.parseInt(split[j]);
-                System.out.print(s + " ");
+        Integer[][]           arrayA    = new Integer[5][5];
+        Integer[][]           arrayB    = new Integer[5][5];
+        Map<Integer, Integer> memberMap = new HashMap<>();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                arrayA[i][j] = sc.nextInt();
             }
-            System.out.println();
-
-
         }
-        for(int i = 0; i < 5; i++) {
-            String str = br.readLine();
-            System.out.println("str2 = " + str);
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                int n = sc.nextInt();
+                arrayB[i][j] = n;
+            }
+        }
+        int workDifficult;
+        int minDifficult = 0;
+        int memberNumber = 0;
+
+        // n명의 회원의 난이도를 계산
+        for (int i = 0; i < 5; i++) {
+            workDifficult = 0;
+            for (int j = 0; j < 5; j++) {
+                for (int k = 0; k < 5; k++)
+                    workDifficult = workDifficult + (arrayA[i][k] * arrayB[k][j]);
+            }
+
+            memberMap.put(i, workDifficult);
+            // 최소
+            if (minDifficult == 0) {
+                minDifficult = workDifficult;
+                continue;
+            }
+
+            if (minDifficult > workDifficult) minDifficult = workDifficult;
         }
 
+        for (int i = 4; i > 1; i--) {
+            if (memberMap.get(i) == minDifficult) {
+                memberNumber = i;
+                break;
+            }
+        }
+        String[] memberArray = new String[]{"Inseo", "Junsuk", "Jungwoo", "Jinwoo", "Youngki"};
 
-        // 행렬 A
 
-
-        //
-
-
+        System.out.println(memberArray[memberNumber]);
+        sc.close();
     }
-
-
 }
-
-
