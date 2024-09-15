@@ -10,6 +10,7 @@ public class B17207 {
         // 1일차 - 6
         // https://www.acmicpc.net/problem/17207
 
+
         // 예상 일량
         // 40 50 20 70 10 Inseo
         // 80 20 20 20 50 Junsuk
