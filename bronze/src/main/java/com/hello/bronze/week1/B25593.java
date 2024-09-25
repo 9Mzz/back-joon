@@ -1,4 +1,4 @@
-package com.hello.bronze.week1.day4;
+package com.hello.bronze.week1;
 
 import java.io.BufferedReader;
 import java.io.IOException;

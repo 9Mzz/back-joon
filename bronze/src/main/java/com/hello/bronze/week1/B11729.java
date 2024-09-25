@@ -1,4 +1,4 @@
-package com.hello.bronze;
+package com.hello.bronze.week1;
 
 import java.io.IOException;
 import java.util.Scanner;
