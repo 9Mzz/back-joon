@@ -11,9 +11,9 @@ public class B1330 {
         int     B  = sc.nextInt();
         sc.close();
 
-        if(A > B) System.out.println(">");
-        if(A < B) System.out.println("<");
-        if(A == B) System.out.println("==");
+        if (A > B) System.out.println(">");
+        if (A < B) System.out.println("<");
+        if (A == B) System.out.println("==");
 
     }
 }

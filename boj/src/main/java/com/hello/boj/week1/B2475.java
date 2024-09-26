@@ -15,10 +15,10 @@ public class B2475 {
         Scanner sc     = new Scanner(System.in);
         String[] strSplit = sc.nextLine()
                 .split(" ");
-        if(strSplit.length != 5) {
+        if (strSplit.length != 5) {
             return;
         }
-        for(String value : strSplit) {
+        for (String value : strSplit) {
             int output = Integer.parseInt(value);
             result += (output * output);
         }

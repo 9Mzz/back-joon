@@ -20,7 +20,7 @@ public class B25501 {
         sb = new StringBuilder();
 
         int n = sc.nextInt();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             // count 값 초기화
             count = 0;
             // result -> 팰린드롬일 경우 1, 아닐 경우 0
@@ -40,9 +40,9 @@ public class B25501 {
     public static int recursion(String s, int l, int r) {
         count++;
         // 팰린드롬 수치를 벗어날 경우
-        if(r <= l) return 1;
+        if (r <= l) return 1;
         // AxxxxB 인 경우(팰린드롬이 아닐 경우)
-        if(s.charAt(l) != s.charAt(r)) return 0;
+        if (s.charAt(l) != s.charAt(r)) return 0;
         // AxxxxA인 경우(팰린드롬인 경우)
         return recursion(s, l + 1, r - 1);
     }

@@ -20,7 +20,7 @@ public class B29701 {
         String[] mossArray = br.readLine()
                 .split(" ");
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             String    get    = mossArray[i];
             Character result = mossMap.get(get);
             System.out.print(result);

@@ -16,11 +16,11 @@ public class B9184 {
         int     a;
         int     b;
         int     c;
-        while(true) {
+        while (true) {
             a = sc.nextInt();
             b = sc.nextInt();
             c = sc.nextInt();
-            if(a == -1 && b == -1 && c == -1) {
+            if (a == -1 && b == -1 && c == -1) {
                 break;
 
             }
@@ -32,20 +32,20 @@ public class B9184 {
     }
 
     static int w(int a, int b, int c) {
-        if(a <= 0 || b <= 0 || c <= 0) {
+        if (a <= 0 || b <= 0 || c <= 0) {
             return 1;
         }
-        if(a > 20 || b > 20 || c > 20) {
+        if (a > 20 || b > 20 || c > 20) {
             return w(20, 20, 20);
         }
 
         // 만약 계산을 한 적이 있다면, 아래 Logic을 거치지 않고 바로 return
-        if(arrays[a][b][c] != 0) {
+        if (arrays[a][b][c] != 0) {
             return arrays[a][b][c];
         }
 
         // Logic
-        if(a < b && b < c) {
+        if (a < b && b < c) {
             arrays[a][b][c] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c);
             return arrays[a][b][c];
         }

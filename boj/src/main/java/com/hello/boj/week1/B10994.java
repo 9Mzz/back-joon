@@ -18,8 +18,8 @@ public class B10994 {
         // n이 1씩 올라갈 때 마다 (4n-3)의 배열이 생성되는 걸 알 수 있다.
         int func = 4 * n - 3;
         arrays = new char[func][func];
-        for(int i = 0; i < func; i++) {
-            for(int j = 0; j < func; j++) {
+        for (int i = 0; i < func; i++) {
+            for (int j = 0; j < func; j++) {
                 arrays[i][j] = 'a';
             }
         }
@@ -28,8 +28,8 @@ public class B10994 {
         drawStar(0, func);
 
         // 값 출력
-        for(int i = 0; i < func; i++) {
-            for(int j = 0; j < func; j++) {
+        for (int i = 0; i < func; i++) {
+            for (int j = 0; j < func; j++) {
                 System.out.print(arrays[i][j]);
             }
             System.out.println();
@@ -37,8 +37,8 @@ public class B10994 {
     }
 
     private static void drawStar(int a, int func) {
-        if(func <= a) return;
-        for(int i = a; i < func; i++) {
+        if (func <= a) return;
+        for (int i = a; i < func; i++) {
             // 맨 윗줄 그리기
             arrays[a][i] = '*';
             // 맨 밑줄 그리기

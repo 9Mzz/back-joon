@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class B11729 {
 
-    static StringBuilder sb = new StringBuilder ();
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         //    세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다.
@@ -22,34 +22,34 @@ public class B11729 {
         //    두 번째 줄부터 K개의 줄에 걸쳐 두 정수 A B를 빈칸을 사이에 두고 출력하는데,
         //    이는 A번째 탑의 가장 위에 있는 원판을 B번째 탑의 가장 위로 옮긴다는 뜻이다.
 
-        Scanner sc = new Scanner (System.in);
-        int n = sc.nextInt ();
-        int result = (int) Math.pow (2, n) - 1;
-        sb.append (result)
-                .append ("\n");
-        Hanoi (n, 1, 2, 3);
-        System.out.println (sb);
+        Scanner sc     = new Scanner(System.in);
+        int     n      = sc.nextInt();
+        int     result = (int) Math.pow(2, n) - 1;
+        sb.append(result)
+                .append("\n");
+        Hanoi(n, 1, 2, 3);
+        System.out.println(sb);
     }
 
     private static void Hanoi(int n, int start, int mid, int to) {
-        //n == 1 인 경우 A -> C 이동
+        // n == 1 인 경우 A -> C 이동
         if (n == 1) {
-            sb.append (start)
-                    .append (" ")
-                    .append (to)
-                    .append ("\n");
+            sb.append(start)
+                    .append(" ")
+                    .append(to)
+                    .append("\n");
             return;
         }
         // n-1개를 A -> B 로 이동
-        Hanoi (n - 1, start, to, mid);
+        Hanoi(n - 1, start, to, mid);
 
         // 1개를 A -> C 로 이동
-        sb.append (start)
-                .append (" ")
-                .append (to)
-                .append ("\n");
+        sb.append(start)
+                .append(" ")
+                .append(to)
+                .append("\n");
 
         // n-1개를 B -> C 로 이동
-        Hanoi (n - 1, mid, start, to);
+        Hanoi(n - 1, mid, start, to);
     }
 }

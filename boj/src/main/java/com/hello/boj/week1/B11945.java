@@ -10,7 +10,7 @@ public class B11945 {
         int y = sc.nextInt();
         int x = sc.nextInt();
 
-        for(int i = 0; i < y; i++) {
+        for (int i = 0; i < y; i++) {
             StringBuilder sb = new StringBuilder(sc.next());
             System.out.println(sb.reverse());
         }

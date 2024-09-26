@@ -54,7 +54,7 @@ public class B17207 {
             workDifficult = 0;
             for (int j = 0; j < 5; j++) {
                 for (int k = 0; k < 5; k++)
-                    workDifficult = workDifficult + (arrayA[i][k] * arrayB[k][j]);
+                     workDifficult = workDifficult + (arrayA[i][k] * arrayB[k][j]);
             }
 
             memberMap.put(i, workDifficult);

@@ -17,7 +17,7 @@ public class B2477 {
         int[] lengths    = new int[6];
 
         StringTokenizer st;
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             st            = new StringTokenizer(br.readLine(), " ");
             directions[i] = Integer.parseInt(st.nextToken());
             lengths[i]    = Integer.parseInt(st.nextToken());
@@ -28,26 +28,24 @@ public class B2477 {
         int minWidth  = 0;
         int minHeight = 0;
 
-        for(int i = 0; i < 6; i++) {
-            if(directions[i] == 1 || directions[i] == 2) {
-                if(maxWidth < lengths[i]) {
+        for (int i = 0; i < 6; i++) {
+            if (directions[i] == 1 || directions[i] == 2) {
+                if (maxWidth < lengths[i]) {
                     maxWidth = lengths[i];
                 }
-            } else
-                if(directions[i] == 3 || directions[i] == 4) {
-                    if(maxHeight < lengths[i]) {
-                        maxHeight = lengths[i];
-                    }
+            } else if (directions[i] == 3 || directions[i] == 4) {
+                if (maxHeight < lengths[i]) {
+                    maxHeight = lengths[i];
                 }
+            }
         }
 
-        for(int i = 0; i < 6; i++) {
-            if((directions[i] == 1 || directions[i] == 2) && lengths[i] == maxWidth) {
+        for (int i = 0; i < 6; i++) {
+            if ((directions[i] == 1 || directions[i] == 2) && lengths[i] == maxWidth) {
                 minHeight = Math.abs(lengths[(i + 5) % 6] - lengths[(i + 1) % 6]);
-            } else
-                if((directions[i] == 3 || directions[i] == 4) && lengths[i] == maxHeight) {
-                    minWidth = Math.abs(lengths[(i + 5) % 6] - lengths[(i + 1) % 6]);
-                }
+            } else if ((directions[i] == 3 || directions[i] == 4) && lengths[i] == maxHeight) {
+                minWidth = Math.abs(lengths[(i + 5) % 6] - lengths[(i + 1) % 6]);
+            }
 
         }
 

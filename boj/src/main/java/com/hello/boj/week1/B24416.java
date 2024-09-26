@@ -22,7 +22,7 @@ public class B24416 {
         sc.close();
 
         // 조건 - 5 <= n <= 40
-        if((n < 5) || (n > 40)) {
+        if ((n < 5) || (n > 40)) {
             return;
         }
         // Logic
@@ -34,8 +34,8 @@ public class B24416 {
     }
 
     private static int fibonacci(int n) {
-        if(n == 0) return 0;
-        if(n == 1) return 1;
+        if (n == 0) return 0;
+        if (n == 1) return 1;
         return fibonacci(n - 2) + fibonacci(n - 1);
     }
 }

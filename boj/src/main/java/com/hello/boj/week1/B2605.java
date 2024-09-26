@@ -15,13 +15,13 @@ public class B2605 {
         int             n  = Integer.parseInt(br.readLine());
         StringTokenizer st;
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             int    r = Integer.parseInt(st.nextToken());
             String s = st.nextToken();
 
-            for(int j = 0; j < s.length(); j++) {
-                for(int k = 0; k < r; k++) {
+            for (int j = 0; j < s.length(); j++) {
+                for (int k = 0; k < r; k++) {
                     System.out.print(s.charAt(j));
                 }
             }

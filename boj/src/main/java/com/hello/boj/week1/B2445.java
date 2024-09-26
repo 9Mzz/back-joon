@@ -12,29 +12,29 @@ public class B2445 {
         Scanner sc    = new Scanner(System.in);
         int     input = sc.nextInt();
 
-        for(int a = 1; a <= input; a++) {
-            for(int j = 1; j <= a; j++) {
+        for (int a = 1; a <= input; a++) {
+            for (int j = 1; j <= a; j++) {
                 System.out.print("*");
             }
-            for(int k = 1; k <= 2 * input - 2 * a; k++) {
+            for (int k = 1; k <= 2 * input - 2 * a; k++) {
                 System.out.print(" ");
             }
-            for(int l = 1; l <= a; l++) {
+            for (int l = 1; l <= a; l++) {
                 System.out.print("*");
             }
             System.out.println();
         }
-        for(int b = input - 1; b >= 1; b--) {
-            for(int x = 1; x <= b; x++) {
+        for (int b = input - 1; b >= 1; b--) {
+            for (int x = 1; x <= b; x++) {
                 System.out.print("*");
             }
-            for(int y = 1; y <= 2 * input - 2 * b; y++) {
+            for (int y = 1; y <= 2 * input - 2 * b; y++) {
                 System.out.print(" ");
             }
-            for(int z = 1; z <= b; z++) {
+            for (int z = 1; z <= b; z++) {
                 System.out.print("*");
             }
-            if(b != 1) {
+            if (b != 1) {
                 System.out.println();
             }
         }

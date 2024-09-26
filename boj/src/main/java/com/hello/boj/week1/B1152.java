@@ -16,7 +16,7 @@ public class B1152 {
         // 공백값 제거
         String str = br.readLine()
                 .trim();
-        
+
 
         StringTokenizer st = new StringTokenizer(str);
         System.out.println(st.countTokens());
