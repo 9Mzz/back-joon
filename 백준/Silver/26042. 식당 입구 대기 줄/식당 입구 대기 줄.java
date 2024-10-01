@@ -1,18 +1,20 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
+
+
+import java.io.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
+        BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter  bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int             n  = Integer.parseInt(br.readLine());
         StringTokenizer st;
 
-        LinkedList<Integer> lineQueue = new LinkedList<>();
-        int maxCount = 0; // 최대 대기 중인 학생 수
-        int bestStudent = Integer.MAX_VALUE; // 최대 대기 중일 때의 맨 뒤 학생 번호
+        Deque<Integer> lineQueue   = new ArrayDeque<>();
+        int            maxCount    = 0;
+        int            lastStudent = Integer.MAX_VALUE;
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -20,25 +22,25 @@ public class Main {
 
             if (type == 1) {
                 int student = Integer.parseInt(st.nextToken());
-                lineQueue.addLast(student);
-            } else {
-                lineQueue.removeFirst();
+                lineQueue.add(student);
+            } else if (type == 2) {
+                lineQueue.poll(); 
             }
 
-            // 현재 대기 중인 학생 수
             int currentCount = lineQueue.size();
-            // 최대 대기 중인 학생 수 갱신
             if (currentCount > maxCount) {
-                maxCount = currentCount;
-                bestStudent = lineQueue.getLast(); // 맨 뒤에 있는 학생 번호
+                maxCount    = currentCount;
+                lastStudent = lineQueue.peekLast(); 
             } else if (currentCount == maxCount) {
-                if (!lineQueue.isEmpty() && lineQueue.getLast() < bestStudent) {
-                    bestStudent = lineQueue.getLast();
+                if (!lineQueue.isEmpty() && lineQueue.peekLast() < lastStudent) {
+                    lastStudent = lineQueue.peekLast();
                 }
             }
         }
+        bw.write(maxCount + " " + lastStudent);
 
-        // 출력
-        System.out.println(maxCount + " " + bestStudent);
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
