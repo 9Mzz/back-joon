@@ -1,41 +1,37 @@
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Stack;
 
 public class Main {
-    // 1일차 - 4 (실버4)
-    // https://www.acmicpc.net/problem/4949
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         while (true) {
-            String input = br.readLine();
-            if (input.equals(".")) {
+            String line = br.readLine();
+            if (line.length() == 1 && line.charAt(0) == '.') {
                 break;
             }
-            System.out.println(isBalanced(input) ? "yes" : "no");
+            bw.write(lineAssertion(line) ? "yes\n" : "no\n");
         }
-
+        bw.flush();
+        bw.close();
+        br.close();
     }
 
-
-    private static boolean isBalanced(String input) {
+    private static boolean lineAssertion(String line) {
         Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
+
+        char[] charArray = line.toCharArray();
+        for (char c : charArray) {
             if (c == '(') {
                 stack.push(c);
             } else if (c == ')') {
-                // (가 없는 상태에서 ) 가 감지될 경우
                 if (stack.isEmpty() || stack.peek() != '(') {
                     return false;
                 }
                 stack.pop();
-            }
-            //
-            if (c == '[') {
+            } else if (c == '[') {
                 stack.push(c);
             } else if (c == ']') {
                 if (stack.isEmpty() || stack.peek() != '[') {
@@ -44,7 +40,7 @@ public class Main {
                 stack.pop();
             }
         }
+
         return stack.isEmpty();
     }
-
 }
