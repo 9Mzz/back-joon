@@ -1,32 +1,36 @@
-import java.io.IOException;
+
+import java.io.*;
+import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        int     n  = sc.nextInt();
-        // 다솜이의 표 받기
-        int dasomVote = sc.nextInt();
-        // 매수자 카운트
-        int buyer = 0;
-        // 내림차순 heap 생성
-        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
-        for (int i = 1; i < n; i++) {
-            // 다솜이를 제외한 다른 국회의원 표 집어넣기
-            pq.offer(sc.nextInt());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        PriorityQueue<Integer> pq    = new PriorityQueue<>(Collections.reverseOrder());
+        int                    n     = Integer.parseInt(br.readLine());
+        int                    DASOM = Integer.parseInt(br.readLine());
+        int                    count = 0;
+
+        if (n == 1) {
+            System.out.println(0);
+            System.exit(0);
         }
 
-        // 가장 득표수가 높은 표보다 클 때 까지 반복
-        while (!pq.isEmpty() && dasomVote <= pq.peek()) {
+        for (int i = 0; i < n - 1; i++) {
+            pq.offer(Integer.parseInt(br.readLine()));
+        }
+        while (DASOM <= pq.peek()) {
             int poll = pq.poll();
-            dasomVote++;
-            buyer++;
+            count++;
+            DASOM++;
             poll--;
             if (poll > 0) {
                 pq.offer(poll);
             }
+
         }
-        System.out.println(buyer);
+        System.out.println(count);
     }
 }
