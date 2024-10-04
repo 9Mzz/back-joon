@@ -1,5 +1,4 @@
 
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -7,10 +6,10 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter  bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //        BufferedWriter  bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
-        int             T  = Integer.parseInt(br.readLine());
+        int             T = Integer.parseInt(br.readLine());
         for (int i = 0; i < T; i++) {
 
             int     N            = Integer.parseInt(br.readLine());
